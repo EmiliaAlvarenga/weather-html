@@ -1,23 +1,23 @@
 import json
 import requests
 
-#def direccion_vi(cadena):
-#    if cadena>=337.5 and cadena<22.5:
-#        return N
-#    if cadena>=22.5 and cadena<67.5:
-#       return NE
-#    if cadena>=67.5 and cadena<112.5:
-#     print E
-#    if cadena>=112.5 and cadena<157.5:
-#     print SE
-#    if cadena>=157.5 and cadena<202.5:
-#        print S
-#    if cadena>=202.5 and cadena<247.5:
-#        return SO
-#    if cadena>=247.5 and cadena <292.5:
-#        print O
-#    if cadena>=292.5 and cadena<337.5:
-#        print NO
+def direccion_vi(cadena):
+    if cadena>=337.5 and cadena<22.5:
+        return "N"
+    if cadena>=22.5 and cadena<67.5:
+        return "NE"
+    if cadena>=67.5 and cadena<112.5:
+        return "E"
+    if cadena>=112.5 and cadena<157.5:
+        return "SE"
+    if cadena>=157.5 and cadena<202.5:
+        return "S"
+    if cadena>202.5 and cadena<247.5:
+        return "SE"    
+    if cadena>=247.5 and cadena <292.5:
+        return "O"
+    if cadena>=292.5 and cadena<337.5:
+        return "NO"
 
 cadena = """
 1. Almeria
@@ -50,8 +50,8 @@ temp_maxima=dicc_api["main"]["temp_min"]
 maxima_celcius=temp_maxima-273
 velocidad_viento=dicc_api["wind"]["speed"]
 viento=int(dicc_api["wind"]["deg"])
-#direccion_viento=direccion_vi("viento")
+direccion_viento=direccion_vi(viento)
 print "La temperatura en %s es de: %.2f"% (provincia,celcius)
 print "Temperatura minima prevista: %2.f"%(minima_celcius)
 print "Temperatura maxima prevista: %2.f"%(maxima_celcius)
-print "Viento: %2.f Km/h Direccion %s"%(velocidad_viento,viento) 
+print "Viento: %2.f Km/h Direccion: %s"%(velocidad_viento,direccion_viento) 
