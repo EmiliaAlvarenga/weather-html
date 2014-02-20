@@ -29,13 +29,13 @@ for i in capital:
     celcius=kelvin-273
     temp_minima=dicc_api["main"]["temp_min"]-273
     temp_maxima=dicc_api["main"]["temp_min"]-273
-    velocidad_viento=dicc_api["wind"]["speed"]
+   velocidad_viento=dicc_api["wind"]["speed"]*1.61
     viento=int(dicc_api["wind"]["deg"])
     direccion_viento=direccion_vi(viento)
 html=''
-f=open('plantilla.html','r')
+f=open('plantilla1.html','r')
 for linea in f:
     html += linea
-    mi_template=Template(html)
-    mi_template.render(temp="uno")
-    print html
+mi_template=Template(html)
+salida=mi_template.render(capitalh=capital, temp_minima=temp_minima,temp_maxima=temp_maxima,viento=velocidad_viento,direccion_viento=direccion_viento)
+print salida
