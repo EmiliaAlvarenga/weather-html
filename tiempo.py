@@ -27,10 +27,8 @@ for i in capital:
     dicc_api=json.loads(datos)
     kelvin=dicc_api["main"]["temp"]
     celcius=kelvin-273
-    temp_minima=dicc_api["main"]["temp_min"]
-    minima_celcius=temp_minima-273
-    temp_maxima=dicc_api["main"]["temp_min"]    
-    maxima_celcius=temp_maxima-273
+    temp_minima=dicc_api["main"]["temp_min"]-273
+    temp_maxima=dicc_api["main"]["temp_min"]-273
     velocidad_viento=dicc_api["wind"]["speed"]
     viento=int(dicc_api["wind"]["deg"])
     direccion_viento=direccion_vi(viento)
