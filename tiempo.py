@@ -3,7 +3,6 @@
 import json
 import requests
 from jinja2 import Template
-import os
 import webbrowser
 
 #funcion que devuelve la orientacion del viento norte N,nordeste NE,este E, ......
